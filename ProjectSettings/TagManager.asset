@@ -11,8 +11,8 @@ TagManager:
   - Backdrop
   - Water
   - UI
-  - Starfighter
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   - name: Backdrop
     uniqueID: 3636706475
     locked: 0
-  - name: Starfighter
+  - name: Projectile
+    uniqueID: 441601653
+    locked: 0
+  - name: Player
     uniqueID: 3556098715
+    locked: 0
+  - name: Enemy
+    uniqueID: 3881586055
     locked: 0
