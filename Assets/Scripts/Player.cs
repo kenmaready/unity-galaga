@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     Vector2 rawInput;
     Vector2 minScreenBoundary;
     Vector2 maxScreenBoundary;
+    private Shooter shooter;
+
+    private void Awake() {
+        shooter = GetComponent<Shooter>();
+    }
 
     private void Start() {
         InitBoundaries();
@@ -37,6 +42,12 @@ public class Player : MonoBehaviour
 
     void OnMove(InputValue value) {
         rawInput = value.Get<Vector2>();
+    }
+
+    void OnFire(InputValue value) {
+        if (shooter != null) {
+            shooter.SetIsFiring(value.isPressed);
+        }
     }
 
 }

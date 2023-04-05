@@ -6,8 +6,12 @@ using UnityEngine;
 public class WaveConfigSO : ScriptableObject
 {
 
+    [SerializeField] List<GameObject> enemyPrefabs;
     [SerializeField] Transform pathPrefab;
     float moveSpeed = K.Enemy.MoveSpeed;
+    float spawnTime = K.Enemy.Spawn.TimeBetween;
+    float spawnTimeVariance = K.Enemy.Spawn.TimeVariance;
+    float minSpawnTime = K.Enemy.Spawn.TimeMinimum;
 
     public Transform GetStartingWaypoint() {
         return pathPrefab.GetChild(0);
@@ -25,6 +29,19 @@ public class WaveConfigSO : ScriptableObject
 
     public float GetMoveSpeed() {
         return moveSpeed;
+    }
+
+    public int GetEnemyCount() {
+        return enemyPrefabs.Count;
+    }
+
+    public GameObject GetEnemyPrefab(int index) {
+        return enemyPrefabs[index];
+    }
+
+    public float GetRandomSpawnTime() {
+        float eta = Random.Range(-spawnTimeVariance, spawnTimeVariance);
+        return Mathf.Max(spawnTime + eta, minSpawnTime);
     }
 
 }
