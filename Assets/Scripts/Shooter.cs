@@ -8,13 +8,27 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject prefab;
     private float speed = K.Projectile.Speed;
     private float life = K.Projectile.Life;
-    private float fireRate = K.Player.FireRate;
+    private float baseFiringRate;
+    private float firingRateVariance = 0f;
+    private float minFiringRate = 0.1f;
+
     private Coroutine firingCoroutine;
-    private bool isFiring = true;
+    private bool isFiring;
+    [SerializeField] private bool useAI;
 
     void Start()
     {
-        
+        if (useAI) { 
+            isFiring = true;
+            baseFiringRate = K.Enemy.FireRate;
+            firingRateVariance = K.Enemy.FireVar;
+            minFiringRate = K.Enemy.FireMin;
+        } else {
+            isFiring = false;
+            baseFiringRate = K.Player.FireRate;
+            firingRateVariance = 0f;
+            minFiringRate = 0.1f;
+        }
     }
 
     void Update()
@@ -45,7 +59,7 @@ public class Shooter : MonoBehaviour
             }
 
             Destroy(instance, life);
-            yield return new WaitForSeconds(fireRate);
+            yield return new WaitForSeconds(useAI ? Random.Range(Mathf.Max(minFiringRate, baseFiringRate - firingRateVariance), baseFiringRate + firingRateVariance) : baseFiringRate);
         }
 
     }

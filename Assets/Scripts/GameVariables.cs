@@ -5,11 +5,14 @@ public class K {
     public class Player {
         // Player variables
         public static float MoveSpeed = 5f;
-        public static float FireRate = .3f;
+        public static float FireRate = .2f;
     }
 
     public class Enemy {
         public static float MoveSpeed = 4f;
+        public static float FireRate = 1.2f;
+        public static float FireVar = .4f;
+        public static float FireMin = .2f;
 
         public class Spawn {
             public static float TimeBetween = 1.2f;

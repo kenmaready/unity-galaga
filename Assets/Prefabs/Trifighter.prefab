@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7816995918306461512}
   - component: {fileID: 2941324207109244657}
   - component: {fileID: -6197528624850878096}
+  - component: {fileID: -1388581387659118415}
   m_Layer: 7
   m_Name: Trifighter
   m_TagString: Untagged
@@ -181,3 +182,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &-1388581387659118415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6687424769217662330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2e7ffe603a6430198c526ce273f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4020191017790454326, guid: 8fddbec66186a4caab330e589279eded, type: 3}
+  useAI: 1
