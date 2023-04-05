@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Backdrop
   - Water
   - UI
-  - 
+  - Starfighter
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backdrop
+    uniqueID: 3636706475
+    locked: 0
+  - name: Starfighter
+    uniqueID: 3556098715
     locked: 0
