@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosion: {fileID: 7129297011586700726, guid: 6b5a9f1a5ab45428abf85342e2ea28f2, type: 3}
 --- !u!114 &4861752982838388363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,4 +463,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4020191017790454326, guid: efed59af4b32d4e5c86a4ac5348697ac, type: 3}
-  isFiring: 0
+  useAI: 0
