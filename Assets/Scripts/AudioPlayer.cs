@@ -10,9 +10,9 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip enemyLaser;
     [SerializeField] AudioClip explosion;
 
-    private float playerLaserVolume = 0.2f;
-    private float enemyLaserVolume = 0.2f;
-    private float explosionVolume = 0.6f;
+    private float playerLaserVolume = 0.1f;
+    private float enemyLaserVolume = 0.1f;
+    private float explosionVolume = 0.4f;
 
 
     public void Play(Sound sound) {
