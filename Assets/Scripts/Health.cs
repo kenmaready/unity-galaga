@@ -8,9 +8,11 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem explosion;
     [SerializeField] bool applyShake;
     CameraShake cameraShake;
+    AudioPlayer audio;
 
     private void Awake() {
         cameraShake = Camera.main.GetComponent<CameraShake>();
+        audio = FindObjectOfType<AudioPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -35,6 +37,7 @@ public class Health : MonoBehaviour
     void Explode() {
         if (explosion != null) {
             ParticleSystem instance = Instantiate(explosion, transform.position, Quaternion.identity);
+            audio.Explosion();
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }

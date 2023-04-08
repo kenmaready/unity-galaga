@@ -44,6 +44,9 @@ TagManager:
   - name: Backdrop
     uniqueID: 3636706475
     locked: 0
+  - name: Backdrop-top
+    uniqueID: 3640094217
+    locked: 0
   - name: Projectile
     uniqueID: 441601653
     locked: 0

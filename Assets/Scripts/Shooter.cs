@@ -15,6 +15,11 @@ public class Shooter : MonoBehaviour
     private Coroutine firingCoroutine;
     private bool isFiring;
     [SerializeField] private bool useAI;
+    private AudioPlayer audio;
+
+    private void Awake() {
+        audio = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -52,10 +57,15 @@ public class Shooter : MonoBehaviour
     IEnumerator FireContinuously() {
         while (true) {
             GameObject instance = Instantiate(prefab, transform.position, Quaternion.identity);
-
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if (rb != null) {
                 rb.velocity = (transform.up * speed);
+            }
+
+            if (useAI) {
+                audio.EnemyLaser();
+            } else {
+                audio.PlayerLaser();
             }
 
             Destroy(instance, life);
