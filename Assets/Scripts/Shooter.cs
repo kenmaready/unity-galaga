@@ -15,10 +15,16 @@ public class Shooter : MonoBehaviour
     private Coroutine firingCoroutine;
     private bool isFiring;
     [SerializeField] private bool useAI;
-    private AudioPlayer audio;
+    private AudioPlayer sfx;
+    private AudioPlayer.Sound clip;
 
     private void Awake() {
-        audio = FindObjectOfType<AudioPlayer>();
+        sfx = FindObjectOfType<AudioPlayer>();
+        if (useAI) {
+            clip = AudioPlayer.Sound.EnemyLaser;
+        } else {
+            clip = AudioPlayer.Sound.PlayerLaser;
+        }
     }
 
     void Start()
@@ -61,12 +67,7 @@ public class Shooter : MonoBehaviour
             if (rb != null) {
                 rb.velocity = (transform.up * speed);
             }
-
-            if (useAI) {
-                audio.EnemyLaser();
-            } else {
-                audio.PlayerLaser();
-            }
+            sfx.Play(clip);
 
             Destroy(instance, life);
             yield return new WaitForSeconds(useAI ? Random.Range(Mathf.Max(minFiringRate, baseFiringRate - firingRateVariance), baseFiringRate + firingRateVariance) : baseFiringRate);

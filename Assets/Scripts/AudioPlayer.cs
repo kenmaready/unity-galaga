@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+    public enum Sound { PlayerLaser, EnemyLaser, Explosion };
 
     [SerializeField] AudioClip playerLaser;
     [SerializeField] AudioClip enemyLaser;
     [SerializeField] AudioClip explosion;
 
     private float playerLaserVolume = 0.2f;
-    private float enemyLaserVolume = 0.3f;
-    private float explosionVolume = 0.4f;
+    private float enemyLaserVolume = 0.2f;
+    private float explosionVolume = 0.6f;
 
-    public void PlayerLaser() {
-        if (playerLaser != null) {
-            AudioSource.PlayClipAtPoint(playerLaser, Camera.main.transform.position, playerLaserVolume);
+
+    public void Play(Sound sound) {
+        switch (sound) {
+            case Sound.PlayerLaser:
+                PlayClip(playerLaser, playerLaserVolume);
+                break;
+            case Sound.EnemyLaser:
+                PlayClip(enemyLaser, enemyLaserVolume);
+                break;
+            case Sound.Explosion:
+                PlayClip(explosion, explosionVolume);
+                break;
         }
     }
 
-    public void EnemyLaser() {
-        if (enemyLaser != null) {
-            AudioSource.PlayClipAtPoint(enemyLaser, Camera.main.transform.position, enemyLaserVolume);
+    private void PlayClip(AudioClip clip, float volume) {
+        if (clip != null) {
+            Vector3 camPOS = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(clip, camPOS, volume);
         }
-    }
-
-    public void Explosion(bool loud = false) {
-        float vol = (loud ? explosionVolume * 2 : explosionVolume);
-        AudioSource.PlayClipAtPoint(explosion, Camera.main.transform.position, explosionVolume);
     }
 
 }
