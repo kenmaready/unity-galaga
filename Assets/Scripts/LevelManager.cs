@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
+    private float sceneLoadDelay = K.GamePlay.SceneLoadDelay;
 
     public void LoadMainMenu() {
         SceneManager.LoadScene("Main Menu");
@@ -16,12 +16,17 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadGameOverMenu() {
-        SceneManager.LoadScene("Game Over Menu");
+        StartCoroutine(WaitAndLoad("Game Over Menu", sceneLoadDelay));
     }
 
     public void QuitGame() {
         Debug.Log("Quitting Game...");
         Application.Quit();
+    }
+
+    IEnumerator WaitAndLoad(string sceneName, float delay) {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 
 }

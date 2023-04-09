@@ -21,7 +21,7 @@ public class K {
         }
 
         public class Wave {
-            public static float TimeBetween = 0f;
+            public static float TimeBetween = 2f;
         }
     }
 
@@ -31,7 +31,7 @@ public class K {
     }
 
     public class GamePlay {
-        
+        public static float SceneLoadDelay = 0.6f;
     }
 
     public class Screen {
