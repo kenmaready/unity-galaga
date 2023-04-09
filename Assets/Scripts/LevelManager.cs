@@ -6,12 +6,18 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     private float sceneLoadDelay = K.GamePlay.SceneLoadDelay;
+    private ScoreKeeper sk;
+
+    private void Awake() {
+        sk = FindObjectOfType<ScoreKeeper>();
+    }
 
     public void LoadMainMenu() {
         SceneManager.LoadScene("Main Menu");
     }
 
     public void LoadGame() {
+        sk.Reset();
         SceneManager.LoadScene("Game");
     }
 

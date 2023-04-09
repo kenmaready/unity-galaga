@@ -1092,6 +1092,7 @@ GameObject:
   - component: {fileID: 720127499}
   - component: {fileID: 720127498}
   - component: {fileID: 720127497}
+  - component: {fileID: 720127501}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1186,6 +1187,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &720127501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720127496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc513358a0b4456baa132368b920c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 193052791}
 --- !u!1 &956960654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1483,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c8452665f9d4f5eb64139e7e401371, type: 3}
+--- !u!1001 &1534632480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072301, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965123082412072303, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
+      propertyPath: m_Name
+      value: ScoreKeeper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c4718121f6f94ebf9a18d0f7a424fbf, type: 3}
 --- !u!1001 &1778086794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1523,10 +1594,6 @@ PrefabInstance:
     - target: {fileID: 141541075105624220, guid: 5e43015c8e05d443f9ac6a87fc4fec6d, type: 3}
       propertyPath: m_Name
       value: AudioPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 141541075105624220, guid: 5e43015c8e05d443f9ac6a87fc4fec6d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e43015c8e05d443f9ac6a87fc4fec6d, type: 3}
