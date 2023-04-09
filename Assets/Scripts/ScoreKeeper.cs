@@ -7,7 +7,7 @@ public class ScoreKeeper : MonoBehaviour
 
     private int score = 0;
 
-    public int Get() {
+    public int GetScore() {
         return score;
     }
 
