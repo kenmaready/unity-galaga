@@ -14,16 +14,18 @@ public class AudioPlayer : MonoBehaviour
     private float enemyLaserVolume = 0.1f;
     private float explosionVolume = 0.4f;
 
+    public static AudioPlayer instance;
+
     private void Awake() {
         ManageSingleton();
     }
 
     private void ManageSingleton() {
-        int numInstances = FindObjectsOfType(GetType()).Length;
-        if (numInstances > 1) {
+        if (instance != null) {
             gameObject.SetActive(false);
             Destroy(gameObject);
         } else {
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
